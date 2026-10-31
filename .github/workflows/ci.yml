@@ -1,0 +1,33 @@
+name: CI
+permissions:
+  contents: read
+on:
+  push:
+  pull_request:
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - name: Check README images and documentation
+        run: python3 scripts/verify_github_ready.py
+      - name: Restore and build
+        run: dotnet build api/SkiResort.Api.csproj -c Release
+      - name: Unit tests
+        run: dotnet test tests/SkiResort.Tests/SkiResort.Tests.csproj -c Release
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install and typecheck/build
+        working-directory: web
+        run: |
+          npm install --no-audit --no-fund
+          npm run build
