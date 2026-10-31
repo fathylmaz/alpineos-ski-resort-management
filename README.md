@@ -1,5 +1,10 @@
 # AlpineOS — Kayak Merkezi Otomasyonu
 
+[![CI — Build & Tests](https://github.com/fathylmaz/alpineos-ski-resort-management/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/fathylmaz/alpineos-ski-resort-management/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
+**🌐 Dil / Language:** **🇹🇷 Türkçe** · [🇬🇧 English](README.en.md)
+
 **Kayak merkezi operasyonlarını yönetici ve müşteri panellerinde bir araya getiren, veritabanı odaklı bir full-stack web uygulaması.**
 
 Üniversitede üzerinde çalıştığım **Kayak Merkezi Otomasyonu** projesinin ana fikrini koruyarak AlpineOS adıyla yeniden geliştirdim. Orijinal çalışma, kayak merkezi işlemlerinin veritabanı üzerinden düzenlenmesine odaklanıyordu. Bu sürümde aynı senaryoyu web tabanlı bir sisteme taşıyarak ekipman kiralama, konaklama, pist yönetimi, kayak dersleri, personel işlemleri ve finans kayıtlarını tek bir uygulamada topladım.
@@ -248,7 +253,7 @@ SkiResort-Management/
 
 ## Test ve kalite kontrolleri
 
-Projeyi kendi bilgisayarımda Docker ile çalıştırıp yönetici ve müşteri ekranlarını kontrol ettim. Kaynak kodunda ayrıca iş kurallarına yönelik xUnit testleri, temel API kontrolleri ve müşteri erişim senaryoları için test betikleri bulunuyor. **Tüm otomatik testlerin eksiksiz geçtiğine veya sistemin canlı ortam için denetlendiğine ilişkin bir iddiada bulunmuyorum.**
+Projeyi kendi bilgisayarımda Docker ile çalıştırıp yönetici ve müşteri ekranlarını kontrol ettim. Kaynak kodunda ayrıca iş kurallarına yönelik xUnit testleri, temel API kontrolleri ve müşteri erişim senaryoları için test betikleri bulunuyor. **GitHub Actions'ın `main` dalındaki CI çalıştırmasında** backend derlemesi, xUnit testleri, frontend TypeScript/derleme ve README görsel/doküman kontrolleri başarılı oldu. En üstteki CI rozeti son çalıştırmanın durumuna göre otomatik değişir. Bu sonuç, bütün uçtan uca ve güvenlik testlerinin tamamlandığı veya sistemin canlı kullanıma hazır olduğu anlamına gelmez.
 
 ```powershell
 # .NET SDK ile iş kuralı testleri
@@ -308,3 +313,5 @@ Bu süreçte ilişkisel veritabanı tasarımı, backend–frontend entegrasyonu,
 ---
 
 **Lisans:** MIT — [LICENSE](LICENSE)
+
+**🌐 Dil değiştir / Switch language:** **🇹🇷 Türkçe** · [🇬🇧 English](README.en.md)
